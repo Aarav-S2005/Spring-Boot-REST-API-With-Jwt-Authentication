@@ -1,0 +1,19 @@
+spring:
+    application:
+        name: SpringBootRestApiWithJwtAuth
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+          hibernate:
+              show_sql: false
+              format_sql: true
+        database: postgresql
+
+    datasource:
+        url: jdbc:postgresql://localhost:5432/< DB Name >
+        username: < Username >
+        password: < Password >
+        driver-class-name: org.postgresql.Driver
+app:
+    jwt-secret: < Jwt-Secret >
