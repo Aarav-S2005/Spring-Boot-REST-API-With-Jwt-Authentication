@@ -56,7 +56,6 @@ public class UserService {
         if(!userRepository.existsUserByUsername(userLoginDTO.getUsername())){
             throw new GlobalException(HttpStatus.NOT_FOUND, "Username not found");
         }
-        System.out.println("authenticating");
         Authentication auth = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         userLoginDTO.getUsername(),
