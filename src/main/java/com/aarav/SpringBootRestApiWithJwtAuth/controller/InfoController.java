@@ -16,23 +16,23 @@ public class InfoController {
         this.infoService = infoService;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<InfoDTO> getInfo(){
         InfoDTO infoDTO = infoService.findInfo();
         return ResponseEntity.status(HttpStatus.OK).body(infoDTO);
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<InfoDTO> createInfo(@RequestBody InfoDTO infoDTO){
         return ResponseEntity.status(HttpStatus.CREATED).body(infoService.createInfo(infoDTO));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<InfoDTO> updateInfo(@RequestBody InfoDTO infoDTO){
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(infoService.updateInfo(infoDTO));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity<InfoDTO> deleteInfo(){
         return ResponseEntity.status(HttpStatus.OK).body(infoService.deleteInfo());
     }
